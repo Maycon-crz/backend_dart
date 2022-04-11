@@ -1,3 +1,10 @@
-void main(List<String> arguments) {
-  print('Hello world!');
+import 'package:shelf/shelf.dart';
+import 'package:shelf/shelf_io.dart' as shelf_io;
+
+void main() async {
+  var _server = ServerHandler();
+
+  final server = await shelf_io.serve(_server.handler, 'localhost', 8080);
+
+  print('Nosso servidor foi iniciado http://localhost:8080');
 }
